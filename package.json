@@ -1,0 +1,13 @@
+{
+  "name": "tarn-by-elmehdi",
+  "private": true,
+  "description": "Tarn: cash-flow forecasting SaaS website (static Astro build, ready for Cloudflare Pages).",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs 5335 site",
+    "deploy": "npx wrangler pages deploy"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
