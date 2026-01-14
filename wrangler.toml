@@ -1,10 +1,11 @@
-# Cloudflare Pages: serves site/ as it is (static Astro build, no build step, no Functions needed).
-# Pages handles the routing itself: /x → /x/ for folders with an index.html,
-# and site/404.html (with status 404) for anything missing. Headers are in site/_headers.
-#
-# Deploy: Cloudflare dashboard → Workers & Pages → Create → Pages → connect the Git repo,
-#   Framework preset: None · Build command: (empty) · Build output directory: site
-# or from this folder: npx wrangler pages deploy   (uses the settings below)
+# Cloudflare Workers (static assets only, no Worker script): serves site/ as it is.
+# Deploy: the Cloudflare build runs `npx wrangler deploy` (or run it yourself from this folder).
+#   /x → /x/ for folders with an index.html, site/404.html (status 404) for anything missing,
+#   site/_headers sets the response headers (read by Cloudflare, never served).
 name = "tarn-by-elmehdi"
-pages_build_output_dir = "site"
 compatibility_date = "2026-11-01"
+
+[assets]
+directory = "./site"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
