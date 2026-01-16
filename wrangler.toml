@@ -2,7 +2,7 @@
 # Deploy: the Cloudflare build runs `npx wrangler deploy` (or run it yourself from this folder).
 #   /x → /x/ for folders with an index.html, site/404.html (status 404) for anything missing,
 #   site/_headers sets the response headers (read by Cloudflare, never served).
-name = "tarn-by-elmehdi"
+name = "tarn-by"
 compatibility_date = "2026-11-01"
 
 [assets]
